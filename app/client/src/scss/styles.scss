@@ -1,0 +1,56 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Raleway';
+}
+.divider,
+.divider-vert {
+    &.divider-dark {
+        filter: brightness(65%);
+    }
+}
+
+.separator {
+    display: block;
+    &.separator-sm {
+        height: 10px;
+    }
+    &.separator-md {
+        height: 80px;
+    }
+    &.separator-lg {
+        height: 200px;
+    }
+}
+a {
+    text-decoration: inherit;
+
+    &:hover, &:focus, &:active {
+        text-decoration: inherit;
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+.no-border {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    &:focus,
+    &:active,
+    &:hover {
+        outline: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}

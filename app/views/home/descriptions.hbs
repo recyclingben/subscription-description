@@ -1,0 +1,21 @@
+<div class="columns">
+    <div class="column centered col-7 col-md-11 text-justify">
+        <div class="separator separator-md"></div>
+        <h1 class="text-center">
+            Descriptions
+        </h1>
+        <div class="separator separator-sm"></div>
+        <div class="separator separator-sm"></div>
+
+        {{#each descriptions}}
+            <h4>
+                {{breakLines snippet.title}}
+            </h4>
+            {{breakLines snippet.description}}
+            <br>
+            <br>
+            <div class="divider"></div>
+            <br>
+        {{/each}}
+    </div>
+</div>

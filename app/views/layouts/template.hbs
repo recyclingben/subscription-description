@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {{#if pagetitle}}
+            {{pagetitle}} &#x2190; Sub Descriptions
+        {{else}}
+            Sub Descriptions
+        {{/if}}
+    </title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!-- CDNs -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Styles -->
+    {{#ifProduction config}}
+        <link rel="stylesheet" href="/css/styles.min.css">
+    {{/ifProduction}}
+    {{#ifDevelopment config}}
+        <link rel="stylesheet" href="/css/styles.css">
+    {{/ifDevelopment}}
+</head>
+<body>
+    <header class="navbar pl-2 p-2">
+        <section class="navbar-section">
+            <a href="/home" class="btn btn-link">
+                Class Tracker
+            </a>
+        </section>
+        <section class="navbar-section">
+            <a href="/home" class="btn btn-link mx-2">
+                Home
+            </a>
+            <div class="divider"></div>
+            {{#if user.isAuthenticated}}
+                <div class="dropdown dropdown-right mr-1 ml-2">
+                    <div href="#" class="dropdown-toggle no-border" tabindex="0">
+                        <figure class="avatar">
+                            <img src="{{user.snippet.thumbnails.default.url}}" alt="avatar" class="c-hand"/>
+                        </figure>
+                    </div>
+                    <!-- menu component -->
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <a href="/account/profile">
+                                My Profile
+                            </a>
+                            <a href="/account/logout">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            {{else}}
+                <a href="/youtube/login" class="btn mx-2">
+                    Log In &nbsp; <i class="fab fa-youtube"></i>
+                </a>
+            {{/if}}
+        </section>
+    </header>
+    {{{body}}}
+
+
+    {{#ifProduction config}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"></script>
+        <script src="/js/site.min.js"></script>
+    {{/ifProduction}}
+    {{#ifDevelopment config}}
+        <script src="/js/site.js"></script>
+    {{/ifDevelopment}}
+</body>
+</html>

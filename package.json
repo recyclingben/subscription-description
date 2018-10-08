@@ -1,0 +1,28 @@
+{
+  "name": "class-tracker",
+  "version": "1.0.0",
+  "description": "A basic app to practice OAuth 2.0 flow and help me track upcoming projects on Canvas.",
+  "main": "app.js",
+  "scripts": {
+    "test": "haha no"
+  },
+  "author": "Benjamin Cubbage",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "gulp-uglify": "^3.0.1",
+    "nconf": "^0.10.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "uglify-es": "^3.3.9"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1"
+  }
+}

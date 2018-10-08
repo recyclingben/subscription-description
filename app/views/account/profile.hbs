@@ -1,0 +1,56 @@
+{{#ifProduction config}}
+    <link rel="stylesheet" href="/css/account/profile.min.css">
+{{/ifProduction}}
+{{#ifDevelopment config}}
+    <link rel="stylesheet" href="/css/account/profile.css">
+{{/ifDevelopment}}
+<div class="separator separator-sm"></div>
+
+    {{#if user.isAuthenticated}}
+        <div class="separator separator-md hide-sm"></div>
+
+        <div class="columns">
+            <div class="col-sm-10 col-8 centered">
+                <div class="profile-avatar">
+                    <div class="avatar avatar-lg">
+                        <img src="{{user.snippet.thumbnails.default.url}}" alt="Avatar">
+                    </div>
+                    <div class="name h2">
+                        {{user.snippet.title}}
+                    </div>
+                </div>
+                <ul class="info-pairs">
+                    <li>
+                        <b>Username:</b> {{user.snippet.title}}
+                    </li>
+                    <li>
+                        <div class="pair-title">
+                            Country:
+                        </div>
+                        <div class="pair-info">
+                            {{user.snippet.country}}
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pair-title">
+                            Channel Description:
+                        </div>
+                        <div class="pair-paragraph">
+                            {{user.snippet.description}}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {{else}}
+        <div class="separator separator-md hide-sm"></div>
+        <div class="separator separator-sm"></div>
+
+        <div class="empty">
+            <p class="empty-title h3 text-bold">Not Logged In</p>
+            <p class="empty-subtitle">You must be logged in to view your profile.</p>
+            <div class="empty-action">
+                <a href="/youtube/login" class="btn btn-primary">&nbsp; Log In &nbsp; <i class="fab fa-youtube"></i> &nbsp;</a>
+            </div>
+        </div>
+    {{/if}}

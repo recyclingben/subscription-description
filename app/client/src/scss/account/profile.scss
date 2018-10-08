@@ -1,0 +1,31 @@
+
+.profile-avatar {
+    display: flex;
+    align-items: center;
+    & > .name {
+        display: inline-block;
+        height: 100%;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+}
+
+ul.info-pairs {
+    margin-top: 24px;
+    & > li {
+        margin-bottom: 20px;
+        
+        & > .pair-title {
+            font-weight: bold;
+            display: inline;
+        }
+        & > .pair-info {
+            display: inline;
+        }
+    
+        & > .pair-paragraph {
+            display: block;
+            text-align: justify;
+        }
+    }
+}

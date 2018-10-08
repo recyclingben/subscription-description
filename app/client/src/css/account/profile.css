@@ -1,0 +1,21 @@
+.profile-avatar {
+  display: flex;
+  align-items: center; }
+  .profile-avatar > .name {
+    display: inline-block;
+    height: 100%;
+    margin-left: 10px;
+    font-weight: bold; }
+
+ul.info-pairs {
+  margin-top: 24px; }
+  ul.info-pairs > li {
+    margin-bottom: 20px; }
+    ul.info-pairs > li > .pair-title {
+      font-weight: bold;
+      display: inline; }
+    ul.info-pairs > li > .pair-info {
+      display: inline; }
+    ul.info-pairs > li > .pair-paragraph {
+      display: block;
+      text-align: justify; }

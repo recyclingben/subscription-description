@@ -1,0 +1,24 @@
+<div class="separator separator-md"></div>
+<div class="text-center">
+    Are you sure you want to log out?
+    <br><br>
+    <button class="btn" onclick="logout()">
+        Log Out
+    </button>
+</div>
+
+<script>
+    const logout = async() => {
+        await fetch('/account/logout', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: 'ben'
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': '{{{csrfToken}}}'
+            }
+        });
+        window.location = '/';
+    }
+</script>

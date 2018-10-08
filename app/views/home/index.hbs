@@ -1,0 +1,16 @@
+<div style="height: 100px;"></div>
+
+<div class="text-center">
+    <div class="text-center d-inline-block">
+        <h1 style="margin-bottom: 0;">
+            Sub Descriptions
+        </h1>
+        <div class="divider"></div>
+        <br>
+        {{#if user.isAuthenticated}}
+            <a href="/home/descriptions" class="btn btn-large btn-block btn-primary">View My Descriptions</a>
+        {{else}}
+            <a href="/youtube/login" class="btn btn-large btn-block btn-primary">Log In To View Descriptions</a>
+        {{/if}}
+    </div>
+</div>
